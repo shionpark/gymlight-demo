@@ -4,6 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
 const { convertToAbsolutePath } = require('./webpackUtil');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
@@ -66,5 +67,11 @@ module.exports = {
     new LodashModuleReplacementPlugin({ shorthands: true }),
     new Dotenv(),
     new ForkTsCheckerWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public/mockServiceWorker.js', to: 'mockServiceWorker.js' },
+        { from: 'public/images', to: 'images' },
+      ],
+    }),
   ],
 };
