@@ -10,7 +10,21 @@ import { GlobalStyles, GymlightProvider } from 'gymlight-design-system';
 import { queryClient } from '@/hooks';
 import { AppRouter } from '@/routers';
 
+const enableMocking = async () => {
+  if (process.env.REACT_APP_USE_MOCKS !== 'true') {
+    return;
+  }
+
+  const { worker } = await import('./mocks/browser');
+
+  return worker.start({
+    onUnhandledRequest: 'bypass',
+  });
+};
+
 const main = async () => {
+  await enableMocking();
+
   const root = createRoot(document.querySelector('#root') as Element);
 
   root.render(
