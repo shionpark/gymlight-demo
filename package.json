@@ -10,7 +10,9 @@
     "start:gymlight-manager": "yarn workspace gymlight-manager start",
     "dev": "concurrently \"yarn workspace gymlight-design-system storybook\" \"yarn workspace gymlight-manager dev\"",
     "dev:gymlight-manager": "yarn workspace gymlight-manager dev",
+    "dev:mock": "yarn workspace gymlight-manager dev:mock",
     "build": "yarn workspace gymlight-design-system publish:npm && yarn workspace gymlight-manager build",
+    "build:mock": "yarn workspace gymlight-manager build:demo",
     "build:design-system": "yarn workspace gymlight-design-system publish:npm",
     "build:gymlight-manager": "yarn workspace gymlight-manager build",
     "generate": "node scripts/generate-component.js"

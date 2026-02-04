@@ -7,7 +7,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production webpack serve --mode production --open --hot --config configs/webpack.prod.js",
     "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve --env development",
+    "dev:mock": "cross-env REACT_APP_USE_MOCKS=true TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve --env development",
     "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "build:demo": "cross-env NODE_ENV=production REACT_APP_USE_MOCKS=true TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
     "build:sb": "storybook build",
     "storybook": "storybook dev -p 6006",
     "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --fix",
