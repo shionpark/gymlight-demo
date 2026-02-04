@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules\/(?!gymlight-design-system)/,
+        exclude: /node_modules/,
         loader: 'esbuild-loader',
         options: {
           target: 'es2021',
