@@ -69,8 +69,14 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: 'public/mockServiceWorker.js', to: 'mockServiceWorker.js' },
-        { from: 'public/images', to: 'images' },
+        {
+          from: convertToAbsolutePath('public/mockServiceWorker.js'),
+          to: 'mockServiceWorker.js',
+        },
+        {
+          from: convertToAbsolutePath('public/images'),
+          to: 'images',
+        },
       ],
     }),
   ],
