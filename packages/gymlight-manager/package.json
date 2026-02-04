@@ -93,6 +93,7 @@
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.6.0",
     "lodash-webpack-plugin": "^0.11.6",
+    "msw": "^2.12.8",
     "pnp-webpack-plugin": "^1.7.0",
     "prettier": "^3.3.3",
     "process": "^0.11.10",
@@ -108,5 +109,10 @@
     "webpack-dev-server": "^5.0.4",
     "webpack-merge": "^6.0.1"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }
