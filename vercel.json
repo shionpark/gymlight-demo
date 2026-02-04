@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "yarn build:mock",
-  "outputDirectory": "packages/gymlight-manager/dist",
-  "installCommand": "yarn install"
+  "installCommand": "corepack enable && yarn install --immutable",
+  "buildCommand": "yarn workspace gymlight-manager build:demo",
+  "outputDirectory": "packages/gymlight-manager/dist"
 }
