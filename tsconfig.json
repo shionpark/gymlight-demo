@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "lib": ["ES5", "ES6", "ESNext", "DOM"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "isolatedModules": true
+  },
+  "references": [
+    {
+      "path": "packages/gymlight-design-system"
+    },
+    {
+      "path": "packages/gymlight-manager"
+    }
+  ],
+  "exclude": ["packages/**/dist/**"],
+  "include": []
+}

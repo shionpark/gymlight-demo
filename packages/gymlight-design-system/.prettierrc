@@ -1,0 +1,27 @@
+{
+  "endOfLine": "auto",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "semi": true,
+  "importOrder": [
+    "^react$",
+    "^react-dom",
+    "^react-dom/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^gymlight-design-system$",
+    "^@/assets/(.*)$",
+    "^@/components/(.*)$",
+    "^@/constants/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/libs/(.*)$",
+    "^@/stories/(.*)$",
+    "^@/styles/(.*)$",
+    "^@/types/(.*)$",
+    "^@/utils/(.*)$",
+    "^\\../(.*)$",
+    "^\\./(.*)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

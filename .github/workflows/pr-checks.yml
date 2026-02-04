@@ -1,0 +1,39 @@
+name: PR 체크
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v2
+      
+      - name: Corepack 활성화
+        run: corepack enable
+
+      - name: 의존성 설치
+        run: corepack yarn install
+
+      - name: ESLint 실행
+        run: yarn workspace gymlight-manager lint
+        continue-on-error: false
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v2
+
+      - name: Corepack 활성화
+        run: corepack enable
+
+      - name: 의존성 설치
+        run: corepack yarn install
+
+      - name: gymlight-manager 빌드
+        run: yarn workspace gymlight-design-system publish:npm && yarn workspace gymlight-manager build
+        continue-on-error: false
