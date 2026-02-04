@@ -3,9 +3,9 @@
   "packageManager": "yarn@4.4.0",
   "version": "0.0.1",
   "description": "Gymlight 디자인 시스템",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
+  "types": "src/index.tsx",
   "browser": "./browser/specific/main.js",
   "scripts": {
     "start": "webpack --mode development",
