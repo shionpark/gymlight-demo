@@ -1,0 +1,5 @@
+{
+  "buildCommand": "yarn build:mock",
+  "outputDirectory": "packages/gymlight-manager/dist",
+  "installCommand": "yarn install"
+}
