@@ -13,7 +13,9 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "gymlight-design-system": ["../gymlight-design-system/src/index.tsx"],
+      "gymlight-design-system/*": ["../gymlight-design-system/src/*"]
     },
     "jsxImportSource": "@emotion/react",
     "allowSyntheticDefaultImports": true,
