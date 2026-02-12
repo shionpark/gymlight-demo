@@ -117,7 +117,12 @@ const config: IConfiguration = {
     new webpack.DefinePlugin({
       'process.env': ENV,
     }),
-    new CopyPlugin({ patterns: [{ from: 'public/images', to: 'images/' }] }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public/images', to: 'images/' },
+        { from: 'public/mockServiceWorker.js', to: 'mockServiceWorker.js' },
+      ],
+    }),
   ],
   output: {
     path: path.join(__dirname, OUTPUT_DIR),

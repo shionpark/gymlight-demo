@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
@@ -70,12 +71,11 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: convertToAbsolutePath('public/mockServiceWorker.js'),
-          to: 'mockServiceWorker.js',
-        },
-        {
-          from: convertToAbsolutePath('public/images'),
-          to: 'images',
+          from: path.resolve(__dirname, '../public'),
+          to: '.',
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
         },
       ],
     }),
