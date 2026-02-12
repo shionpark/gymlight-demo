@@ -49,7 +49,9 @@ const Sidebar = ({ currentUser, sidebarIsFold }: ISidebarProps) => {
       const { icon: Icon, label } = menu[key];
       const to = URLS.CLIENT[key.toUpperCase() as keyof typeof URLS.CLIENT];
 
-      return <MenuItem key={key} icon={<Icon />} label={label} to={to} />;
+      return (
+        <MenuItem key={key} icon={<Icon />} label={label} to={to} sidebarIsFold={sidebarIsFold} />
+      );
     });
   };
 
