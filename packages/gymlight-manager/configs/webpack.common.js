@@ -66,7 +66,7 @@ module.exports = {
       favicon: convertToAbsolutePath('public/favicon.svg'),
     }),
     new LodashModuleReplacementPlugin({ shorthands: true }),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
     new ForkTsCheckerWebpackPlugin(),
     new CopyPlugin({
       patterns: [
