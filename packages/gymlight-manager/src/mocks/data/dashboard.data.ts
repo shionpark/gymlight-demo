@@ -13,6 +13,7 @@ import type {
 } from '@/types';
 
 import { mockBranches } from './branches.data';
+import { mockMembers } from './members.data';
 import { mockCurrentUser } from './users.data';
 
 /**
@@ -40,9 +41,9 @@ export const mockRecentNotices: IRecentNoticeResponse[] = [
  * 대시보드 - 회원 통계
  */
 export const mockMemberDashboard: IMemberDashboardResponse = {
-  activeMembersCount: 156,
+  activeMembersCount: mockMembers.filter((m) => m.status === '활성화').length,
   newMembersTodayCount: 3,
-  expiringMembersThisMonthCount: 12,
+  expiringMembersThisMonthCount: mockMembers.filter((m) => m.status === '만료예정').length,
   lastUpdated: new Date().toISOString(),
 };
 

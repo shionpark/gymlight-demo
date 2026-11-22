@@ -19,11 +19,13 @@ const today = () => {
 const generateTodayAttendances = (): ICheckedMemberResponse[] => {
   // 활성화된 회원 중 랜덤하게 출석 데이터 생성
   const activeMembers = mockMembers.filter((m) => m.status === '활성화');
-  const attendedCount = Math.min(47, activeMembers.length);
+  // 활성 회원의 약 8%가 하루에 출석하고, 출근 전·점심·퇴근 후에 몰린다.
+  const attendedCount = Math.round(activeMembers.length * 0.08);
+  const peakHours = [6, 6, 7, 7, 7, 8, 9, 10, 12, 12, 13, 15, 17, 18, 19, 19, 20, 20, 20, 21, 21, 22];
 
   return activeMembers.slice(0, attendedCount).map((member, index) => {
-    const hour = 6 + Math.floor(index / 6); // 6시부터 시작
-    const minute = (index * 10) % 60;
+    const hour = peakHours[index % peakHours.length];
+    const minute = Math.floor(Math.random() * 60);
     const time = `${today()} ${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00`;
 
     const productTypes: ProductOptionsType[] = ['회원권'];

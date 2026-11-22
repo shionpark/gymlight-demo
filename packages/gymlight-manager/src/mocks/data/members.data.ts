@@ -42,12 +42,14 @@ export const mockMemberCategories: IMemberCategoryResponse[] = [
 ];
 
 /**
- * 50명의 회원 Mock 데이터 생성
+ * 회원 Mock 데이터 생성 (지점 4곳 × 500명)
  */
+const MEMBER_COUNT = 2000;
+
 const generateMembers = (): IMemberResponse[] => {
   const members: IMemberResponse[] = [];
 
-  for (let i = 1; i <= 50; i++) {
+  for (let i = 1; i <= MEMBER_COUNT; i++) {
     const gender = generateGender();
     const name = generateKoreanName(gender);
     const birthDate = generateBirthDate(20, 55);
