@@ -57,7 +57,7 @@ export const borderRadius = {
 };
 
 export const fontFamily = {
-  kor: 'Noto Sans KR',
+  kor: '"Noto Sans KR", sans-serif',
   eng: 'Playfair Display',
 };
 

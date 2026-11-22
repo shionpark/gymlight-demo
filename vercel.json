@@ -2,5 +2,11 @@
   "framework": null,
   "installCommand": "corepack enable && yarn install --immutable",
   "buildCommand": "yarn workspace gymlight-manager build:demo",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

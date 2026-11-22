@@ -7,6 +7,12 @@ import type {
 
 import { mockMembers, mockActiveMembers } from './members.data';
 
+// 실제 API처럼 "날짜 시각" 형태로 내려야 시간대별 출석 통계와 출석 상세가 파싱할 수 있다.
+const today = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+};
+
 /**
  * 오늘 출석한 회원 목록 Mock 데이터
  */
@@ -18,7 +24,7 @@ const generateTodayAttendances = (): ICheckedMemberResponse[] => {
   return activeMembers.slice(0, attendedCount).map((member, index) => {
     const hour = 6 + Math.floor(index / 6); // 6시부터 시작
     const minute = (index * 10) % 60;
-    const time = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+    const time = `${today()} ${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00`;
 
     const productTypes: ProductOptionsType[] = ['회원권'];
     if (member.remainingSessions > 0) {
@@ -68,7 +74,7 @@ export const createAttendance = (memberId: number): ICheckedMemberResponse | nul
   if (!member) return null;
 
   const now = new Date();
-  const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+  const time = `${today()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:00`;
 
   const productTypes: ProductOptionsType[] = ['회원권'];
   if (member.remainingSessions > 0) {
